@@ -10,74 +10,78 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Alphabet Practice</title>
+
+    <script src="https://kit.fontawesome.com/b7f823b944.js" crossorigin="anonymous"></script>
   </head>
-  <body class=" text-white bg-[url(./images/background.png)] h-screen" >
+  <body class=" text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 " >
     <main>
       <!-- home section -->
-      <section id="home" class="grid hidden justify-center items-center h-screen">
+      <section id="home" class="grid justify-center items-center h-screen">
         <div class="text-center space-y-4">
-          <h1 class="text-5xl lg:text-8xl">Alphabet Class Pro</h1>
-        <button class="py-3 px-5 bg-black rounded-lg">Play Now</button>
+          <h1 class="text-5xl lg:text-8xl font-bold">Alphabet Class Pro</h1>
+        <button id="playNow" onclick="playNow()" class="py-3 text-2xl px-5 bg-black rounded-lg">Play Now</button>
         </div>
       </section>
       <!-- playground section -->
       <section id="playGround" class=" hidden grid justify-center items-center h-screen">
-        <div class="space-y-5">
+        <div class="">
           <!--gaming  screen -->
-          <div class="h-96 w-full relative bg-[#0000006a] rounded-lg ">
-              <h2 class="absolute top-[-3%] left-[50%]  translate-x-[-50%] bg-[#0000006a] p-3 rounded-md " >don't watch Keyboard while plying.....</h2>
-              <span id="" class="uppercase justify-center text-9xl flex h-full items-center">s</span>
+          <div class="h-80 w-full relative bg-[#0000006a] rounded-lg mb-10 ">
+              <h2 class="absolute top-0 left-[50%]  translate-x-[-50%] bg-[#0000006a] p-3 rounded-md " >don't watch Keyboard while plying.....</h2>
+              <span id="screenAlphabet" class="uppercase justify-center text-9xl flex h-full items-center">s</span>
           </div>
           <!-- keyboard -->
-          <div class="text-2xl  md:text-3xl lg:text-5xl">
+          <div class="text-1xl  md:text-2xl lg:text-5xl">
             <div class="my-1 flex w-full justify-center gap-1">
-              <kbd class="kbd">q</kbd>
-              <kbd class="kbd">w</kbd>
-              <kbd class="kbd">e</kbd>
-              <kbd class="kbd">r</kbd>
-              <kbd class="kbd">t</kbd>
-              <kbd class="kbd">y</kbd>
-              <kbd class="kbd">u</kbd>
-              <kbd class="kbd">i</kbd>
-              <kbd class="kbd">o</kbd>
-              <kbd class="kbd">p</kbd>
+              <kbd id="q" class="kbd">q</kbd>
+              <kbd id="w" class="kbd">w</kbd>
+              <kbd id="e" class="kbd">e</kbd>
+              <kbd id="r" class="kbd">r</kbd>
+              <kbd id="t" class="kbd">t</kbd>
+              <kbd id="y" class="kbd">y</kbd>
+              <kbd id="u" class="kbd">u</kbd>
+              <kbd id="i" class="kbd">i</kbd>
+              <kbd id="o" class="kbd">o</kbd>
+              <kbd id="p" class="kbd">p</kbd>
             </div>
             <div class="my-1 flex w-full justify-center gap-1">
-              <kbd class="kbd">a</kbd>
-              <kbd class="kbd">s</kbd>
-              <kbd class="kbd">d</kbd>
-              <kbd class="kbd">f</kbd>
-              <kbd class="kbd">g</kbd>
-              <kbd class="kbd">h</kbd>
-              <kbd class="kbd">j</kbd>
-              <kbd class="kbd">k</kbd>
-              <kbd class="kbd">l</kbd>
+              <kbd id="a" class="kbd">a</kbd>
+              <kbd id="s" class="kbd">s</kbd>
+              <kbd id="d" class="kbd">d</kbd>
+              <kbd id="f" class="kbd">f</kbd>
+              <kbd id="g" class="kbd">g</kbd>
+              <kbd id="h" class="kbd">h</kbd>
+              <kbd id="j" class="kbd">j</kbd>
+              <kbd id="k" class="kbd">k</kbd>
+              <kbd id="l" class="kbd">l</kbd>
             </div>
             <div class="my-1 flex w-full justify-center gap-1">
-              <kbd class="kbd">z</kbd>
-              <kbd class="kbd">x</kbd>
-              <kbd class="kbd">c</kbd>
-              <kbd class="kbd">v</kbd>
-              <kbd class="kbd">b</kbd>
-              <kbd class="kbd">n</kbd>
-              <kbd class="kbd">m</kbd>
-              <kbd class="kbd">/</kbd>
+              <kbd id="z" class="kbd">z</kbd>
+              <kbd id="x" class="kbd">x</kbd>
+              <kbd id="c" class="kbd">c</kbd>
+              <kbd id="v" class="kbd">v</kbd>
+              <kbd id="b" class="kbd">b</kbd>
+              <kbd id="n" class="kbd">n</kbd>
+              <kbd id="m" class="kbd">m</kbd>
+              <kbd id="/" class="kbd">/</kbd>
             </div>
           </div>
 
           <!-- life and score -->
           <div class="flex justify-between text-2xl  md:text-3xl lg:text-5xl mt-10">
-            <button class="py-3 px-5 bg-[#0000006a] rounded-lg" > Life <span id="life">0</span></button>
-            <button class="py-3 px-5 bg-[#0000006a] rounded-lg">Score <span id="score">0</span></button>
+            <button class="py-3 px-5 bg-[#0000006a] rounded-lg" > Health: <i class="fa-solid fa-heart text-red-200"></i> <span id="life">5</span></button>
+            <button class="py-3 px-5 bg-[#0000006a] rounded-lg">Score: <span id="score">0</span></button>
           </div> 
+         
           
         </div>
       </section>
       <!-- score section -->
-      <section id="reslut" class="h-screen flex justify-center items-center">
+      <section id="result" class="h-screen hidden flex justify-center items-center">
         <div class="p-20 rounded-lg bg-[#0000006a] space-y-5 text-center ">
+          <h3 class="text-5xl font-semibold">Game Over!!!</h3>
           <h2 class="text-5xl lg:text-8xl font-bold ">Score: <span id="final_score">0</span></h2>
-          <button class="py-3 text-3xl px-5 bg-[#0000006a] rounded-lg">Play again</button>
+          <button onclick="playNow()" class="py-3 text-3xl px-5 bg-[#0000006a] rounded-lg">Play again</button>
           <p class="text-xl">Practice will make you pro..</p>
 
         </div>
